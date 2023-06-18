@@ -1,0 +1,6 @@
+/.venv
+/.dockervenv
+/api/__pycache__
+/db/*
+.DS_Dtore
+.env
