@@ -66,6 +66,7 @@ app.add_middleware(
     SessionMiddleware,
     secret_key="secret-key",
     session_cookie="sessionid",
+    semi_site="none",
 )
 
 origins = ["https://h23s-20-frontend.vercel.app", "http://localhost:3000"]
