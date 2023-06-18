@@ -6,7 +6,7 @@ SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:password@app_db:3306/app"
 
 import time
 
-time.sleep(3)
+time.sleep(10)
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 

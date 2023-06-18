@@ -32,10 +32,5 @@ services:
       - ./db/data:/var/lib/mysql
       - ./mysql/init:/docker-entrypoint-initdb.d
     ports:
-      - target: 3306 # ゲスト は 3306 にマッピングする
-        published: 13306 # ホスト to ゲスト は 13306 から入る
-        protocol: tcp
-        mode: host
+      - 3306:3306
     restart: always
-    expose:
-      - "3306"

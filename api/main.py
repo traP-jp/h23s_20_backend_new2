@@ -63,7 +63,9 @@ class TraqOAuthMiddleware(BaseHTTPMiddleware):
 app.add_middleware(TraqOAuthMiddleware)
 
 app.add_middleware(
-    SessionMiddleware, secret_key="secret-key", session_cookie="sessionid"
+    SessionMiddleware,
+    secret_key="secret-key",
+    session_cookie="sessionid",
 )
 
 origins = ["https://h23s-20-frontend.vercel.app", "http://localhost:3000"]
@@ -103,9 +105,7 @@ async def auth(request: Request, responce: Response):
     request.session["token"] = token
 
     # sameSite = None ,Secure = True にする
-    responce.set_cookie(secure=True, samesite="None")
-
-    return RedirectResponse(url="/me")
+    # responce.set_cookie(secure=True, samesite="None")
 
     return {}
 
