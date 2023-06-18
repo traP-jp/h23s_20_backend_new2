@@ -39,22 +39,3 @@ services:
     restart: always
     expose:
       - "3306"
-
-  https-portal:
-    image: steveltn/https-portal:1
-    ports:
-      - "80:80"
-      - "443:443"
-    links:
-      - app:app
-    environment:
-      DOMAINS: "treesb.irori.dev -> http://app:8000"
-      STAGE: "local"
-      FORCE_RENEW: "false"
-      CLIENT_MAX_BODY_SIZE: 0
-    restart: unless-stopped
-    volumes:
-      - https-portal_data:/var/lib/https-portal
-
-volumes:
-  https-portal_data:

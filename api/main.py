@@ -31,6 +31,7 @@ class TraqOAuthMiddleware(BaseHTTPMiddleware):
         # Skip middleware processing for certain paths
         if str(request.url.path) in [
             "/",
+            "/users",
             "/ping",
             "/docs",
             "/openapi.json",
@@ -65,7 +66,7 @@ app.add_middleware(
     SessionMiddleware, secret_key="secret-key", session_cookie="sessionid"
 )
 
-origins = ["https://h23s-20-frontend.vercel.app/", "http://localhost:3000/"]
+origins = ["https://h23s-20-frontend.vercel.app", "http://localhost:3000"]
 
 app.add_middleware(
     CORSMiddleware,
